@@ -9,6 +9,7 @@ while True:
     if user_input =='q':
         break
     
+    #Important to remember ***
     if user_input not in options:
         print("Not a valid option")
         continue
