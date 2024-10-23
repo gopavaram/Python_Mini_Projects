@@ -10,6 +10,7 @@ while True:
         break
     
     #Important to remember ***
+    # not in added
     if user_input not in options:
         print("Not a valid option")
         continue
