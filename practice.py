@@ -113,110 +113,89 @@
 
 # # Code to create a single linked list
 # #First creating the node
-# class Node:
-#     def __init__(self,data):
-#         self.data=data
-#         self.ref=None
-
-# #Creating the Linked list operations like adding, deleting, traversing
-# class Linkedlist:
-#     def __init__(self):
-#         self.head=None
-#     def print_ll(self):
-#         if self.head == None:
-#             print("The list is empty")
-#         else:
-#             n=self.head
-#             while n is not None:
-#                 print(n.data)
-#                 n=n.ref
-
-# ll1= Linkedlist()
-
-# ll1.print_ll()
-
-# class Node:
-#     def __init__(self, data):
-#         self.data=data
-#         self.ref=None
-
-# class Linkedlist:
-#     def __init__(self):
-#         self.head=None
-    
-#     def print_LL(self):
-#         if self.head is None:
-#             print("List is empty")
-#         else:
-#             n=self.head
-#             while n is not None:
-#                 print(n.data)
-#                 n=n.ref
-
-    
-
-# ll1= Linkedlist()
-# ll1.print_LL()
 
 
 class Node:
 
-    def __init__(self,data):
-        self.data = data
-        self.ref = None
+    def __init__(self, data):
+        self.data=data
+        self.ref= None
 
-class Linkedlist:
+class Linked_List:
 
     def __init__(self):
-        self.head=None
-
-    def print_ll(self):
-        n=self.head
-        if n is None:
-            print("The list is empty")
-        else:
-            while n is not None:
-                print(n.data,"--->", end=" ")
-                n=n.ref
+        self.head = None
 
     def add_begin(self, data):
-        new_node=Node(data) # calling a method inside a class
-        # print("This is new_node:",new_node.data, new_node.ref)
-        new_node.ref=self.head
-        self.head=new_node
+        new_node = Node(data)
+        new_node.ref = self.head
+        self.head = new_node
     
-    def add_end(self,data):
+    def add_end(self, data):
         new_node = Node(data)
         if self.head is None:
-            self.head=new_node
+            self.head = new_node
         else:
             n = self.head
             while n.ref is not None:
-                n = n.ref
+                n=n.ref
             n.ref = new_node
     
     def after_node(self, data, x):
+        
         n=self.head
         while n is not None:
             if x == n.data:
                 break
-            n = n.ref
+            n=n.ref
         if n is None:
-            print("Item does not exist")
+            print("Item is not present")
         else:
-            new_node=Node(data)
-            new_node.ref=n.ref
+            new_node = Node(data)
+            new_node.ref = n.ref
             n.ref = new_node
+    
+    def add_before(self, data, x):
+
+        new_node = Node(data)
+        n=self.head
+        if n is None:
+            print("The list is empty")
+            return
+        if n.data == x:
+            new_node.ref = self.head
+            self.head = new_node
+            return
         
+        while n.ref is not None:
+            if n.ref.data == x:
+                break
+            n=n.ref
+        if n.ref is None:
+            print("The Item list is empty")
+        else:
+            new_node.ref = n.ref
+            n.ref = new_node
+                            
+    def print_ll(self):
+        n=self.head
+        while n is not None:
+            print(n.data, "--->", end=" ")
+            n=n.ref
+
+ll1=Linked_List()
+ll1.add_end(8)
+ll1.add_begin(10)
+ll1.add_begin(20)
+ll1.add_end(50)
+ll1.after_node(17,8)
+ll1.add_before(100,50)
+ll1.add_before(150,20)
+ll1.print_ll()
 
 
 
-l1=Linkedlist()
-l1.add_begin(20)
-l1.add_begin(10)
-l1.add_end(30)
-l1.after_node(25,20)
-l1.print_ll()
+        
 
 
 
