@@ -115,85 +115,151 @@
 # #First creating the node
 
 
-class Node:
+# class Node:
 
-    def __init__(self, data):
-        self.data=data
-        self.ref= None
+#     def __init__(self, data):
+#         self.data=data
+#         self.ref= None
 
-class Linked_List:
+# class Linked_List:
 
-    def __init__(self):
-        self.head = None
+#     def __init__(self):
+#         self.head = None
 
-    def add_begin(self, data):
-        new_node = Node(data)
-        new_node.ref = self.head
-        self.head = new_node
+#     def add_begin(self, data):
+#         new_node = Node(data)
+#         new_node.ref = self.head
+#         self.head = new_node
     
-    def add_end(self, data):
-        new_node = Node(data)
-        if self.head is None:
-            self.head = new_node
-        else:
-            n = self.head
-            while n.ref is not None:
-                n=n.ref
-            n.ref = new_node
+#     def add_end(self, data):
+#         new_node = Node(data)
+#         if self.head is None:
+#             self.head = new_node
+#         else:
+#             n = self.head
+#             while n.ref is not None:
+#                 n=n.ref
+#             n.ref = new_node
     
-    def after_node(self, data, x):
+#     def after_node(self, data, x):
         
-        n=self.head
-        while n is not None:
-            if x == n.data:
-                break
-            n=n.ref
-        if n is None:
-            print("Item is not present")
-        else:
-            new_node = Node(data)
-            new_node.ref = n.ref
-            n.ref = new_node
+#         n=self.head
+#         while n is not None:
+#             if x == n.data:
+#                 break
+#             n=n.ref
+#         if n is None:
+#             print("Item is not present")
+#         else:
+#             new_node = Node(data)
+#             new_node.ref = n.ref
+#             n.ref = new_node
     
-    def add_before(self, data, x):
+#     def add_before(self, data, x):
 
-        new_node = Node(data)
-        n=self.head
-        if n is None:
-            print("The list is empty")
-            return
-        if n.data == x:
-            new_node.ref = self.head
-            self.head = new_node
-            return
+#         new_node = Node(data)
+#         n=self.head
+#         if n is None:
+#             print("The list is empty")
+#             return
+#         if n.data == x:
+#             new_node.ref = self.head
+#             self.head = new_node
+#             return
         
-        while n.ref is not None:
-            if n.ref.data == x:
-                break
-            n=n.ref
-        if n.ref is None:
-            print("The Item list is empty")
-        else:
-            new_node.ref = n.ref
-            n.ref = new_node
+#         while n.ref is not None:
+#             if n.ref.data == x:
+#                 break
+#             n=n.ref
+#         if n.ref is None:
+#             print("The Item list is empty")
+#         else:
+#             new_node.ref = n.ref
+#             n.ref = new_node
                             
-    def print_ll(self):
-        n=self.head
-        while n is not None:
-            print(n.data, "--->", end=" ")
-            n=n.ref
+#     def print_ll(self):
+#         n=self.head
+#         while n is not None:
+#             print(n.data, "--->", end=" ")
+#             n=n.ref
 
-ll1=Linked_List()
-ll1.add_end(8)
-ll1.add_begin(10)
-ll1.add_begin(20)
-ll1.add_end(50)
-ll1.after_node(17,8)
-ll1.add_before(100,50)
-ll1.add_before(150,20)
-ll1.print_ll()
+# ll1=Linked_List()
+# ll1.add_end(8)
+# ll1.add_begin(10)
+# ll1.add_begin(20)
+# ll1.add_end(50)
+# ll1.after_node(17,8)
+# ll1.add_before(100,50)
+# ll1.add_before(150,20)
+# ll1.print_ll()
 
 
+# # Adding two complex numbers
+
+# class Comp_Number:
+#     def __init__(self, real, comp):
+#         self.real = real
+#         self.comp = comp
+    
+#     def add_num(self,n):
+#         real =self.real + n.real
+#         comp = self.comp + n.comp
+#         result = complex(real, comp)
+#         return result
+    
+# x1 = Comp_Number(1,2)
+# x2 = Comp_Number(10,20)
+# print("\n",x1.add_num(x2))
+
+
+# Creating a Class for Mirocwave
+
+class Microwave:
+    
+    def __init__(self,brand, power_rating):
+        self.brand = brand
+        self.power_rating = power_rating
+        self.turned_on = False
+    
+    def turn_on(self):
+        if self.turned_on == True:
+            print(f"The microwave {self.brand} is alredy turned on")
+
+        else:
+            self.turned_on = True
+            print(f"The microwave {self.brand} is now turned on")
+
+    def turn_off(self):
+        if self.turned_on == True:
+            self.turned_on = False
+            print(f"The microwave {self.brand} is now turned off")
+        else:
+            print(f"The microwave {self.brand} is already turned off")
+
+    def run(self, seconds):
+        if self.turned_on == True:
+            print(f"Running the microwave {self.brand} for {seconds} seconds")
+        else:
+            print(f"Please turn on the microwave {self.brand} to run")
+
+    # Dunder methods
+    def __add__(self, other):
+        return (f"{self.brand} + {other.brand}")
+
+
+samsung = Microwave("Samsung", "B")
+bosch = Microwave("Bosch", "A")
+
+print(samsung + bosch)
+
+
+# smg.turn_on()
+# smg.turn_on()
+# smg.run(30)
+# smg.turn_off()
+# smg.run(10)
+
+        
 
         
 
