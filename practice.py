@@ -214,43 +214,43 @@
 
 # Creating a Class for Mirocwave
 
-class Microwave:
+# class Microwave:
     
-    def __init__(self,brand, power_rating):
-        self.brand = brand
-        self.power_rating = power_rating
-        self.turned_on = False
+#     def __init__(self,brand, power_rating):
+#         self.brand = brand
+#         self.power_rating = power_rating
+#         self.turned_on = False
     
-    def turn_on(self):
-        if self.turned_on == True:
-            print(f"The microwave {self.brand} is alredy turned on")
+#     def turn_on(self):
+#         if self.turned_on == True:
+#             print(f"The microwave {self.brand} is alredy turned on")
 
-        else:
-            self.turned_on = True
-            print(f"The microwave {self.brand} is now turned on")
+#         else:
+#             self.turned_on = True
+#             print(f"The microwave {self.brand} is now turned on")
 
-    def turn_off(self):
-        if self.turned_on == True:
-            self.turned_on = False
-            print(f"The microwave {self.brand} is now turned off")
-        else:
-            print(f"The microwave {self.brand} is already turned off")
+#     def turn_off(self):
+#         if self.turned_on == True:
+#             self.turned_on = False
+#             print(f"The microwave {self.brand} is now turned off")
+#         else:
+#             print(f"The microwave {self.brand} is already turned off")
 
-    def run(self, seconds):
-        if self.turned_on == True:
-            print(f"Running the microwave {self.brand} for {seconds} seconds")
-        else:
-            print(f"Please turn on the microwave {self.brand} to run")
+#     def run(self, seconds):
+#         if self.turned_on == True:
+#             print(f"Running the microwave {self.brand} for {seconds} seconds")
+#         else:
+#             print(f"Please turn on the microwave {self.brand} to run")
 
-    # Dunder methods
-    def __add__(self, other):
-        return (f"{self.brand} + {other.brand}")
+#     # Dunder methods
+#     def __add__(self, other):
+#         return (f"{self.brand} + {other.brand}")
 
 
-samsung = Microwave("Samsung", "B")
-bosch = Microwave("Bosch", "A")
+# samsung = Microwave("Samsung", "B")
+# bosch = Microwave("Bosch", "A")
 
-print(samsung + bosch)
+# print(samsung + bosch)
 
 
 # smg.turn_on()
@@ -259,17 +259,171 @@ print(samsung + bosch)
 # smg.turn_off()
 # smg.run(10)
 
-        
+# l1 = [1,2,3]
+# flag = False
+# for i in range(len(l1)): #0,1,2,3
+#     for j in range(i+1, len(l1)):
+#         if l1[i] == l1[j]:
+#             flag = True
+#             break
+# print(flag)
 
-        
 
+from typing import List
 
+# class Solution:
+#     def containsDuplicates(self, nums:List[int]):
 
+#         set1=set()
+#         for i in nums:
+#             if i in set1:
+#                 return True
+#             set1.add(i)
+#         return False
     
+# s1=Solution()
+# print(s1.containsDuplicates([1,2,3,4]))
+
+
+
+# class Solution:
+#     def containsDuplicate(self, nums: List[int]):
+#         set1 = set()
+#         for num in nums:
+#             if num in set1:
+#                 return True
+#             set1.add(num)
+#         return False
+
+# s1=Solution()
+# print(s1.containsDuplicate([1,2,3,4,1]))
             
+
+
+# list1=[1,2,3,4,5,6,7]
+# list1.reverse
+# flag= False
+# for i in range(len(list1)): #0,1,2,3..,6
+#     for j in range(i+1, len(list1)):
+#         if list1[i]== list1[j]:
+#             flag = True
+#             break
+      
+# print(flag)
+            
+
+# class Solution:
+#     def contains_duplicates(self, nums: List[int]) -> bool:
+#         self.nums = nums  # Convert args to a list and store it
+#         return len(self.nums) != len(set(self.nums))
+
+# # Usage
+# s = Solution()
+# print(s.contains_duplicates([1, 2, 3, 4]))  # Output: True
+
+
+# list1=[1,2,3,4,5,6,7]
+# list1.reverse()
+
+# for i in list1:
+#     print(i)
+
+
+
+# list2=[1,2,3,4,5,4,5,1]
+# a=[]
+
+# for i in range(len(list2)):
+#     for j in range(i+1, len(list2)):
+#         if list2[i] != list2[j]:
+#             a.append(list2[i])
+#             break
+
+# if a and a[0] is not None:
+#     print(a[0])
+# else:
+#     print(-1)
+
+
+# class Solution:
+#     def contains_dup(self, num:List[int]):
+#         set1=set()
+#         for i in num:
+#             if i in set1:
+#                 return i
+#             set1.add(i)
+#         return -1
+    
+# c1= Solution()
+# print(c1.contains_dup([1,2,3,4,5,3,1]))
+
+
+# list2=[1,2,3,4,5,4,5,1,7]
+
+# nounique=[]
+# unique=[]
+
+# for i in range(len(list2)):
+#     for j in range(i+1, len(list2)):
+#         if list2[i] == list2[j]: #1==2
+#             nounique.append(list2[i])
         
-    
-    
+# for num in set(list2):
+#     if num not in nounique:
+#         unique.append(num)
+        
+# print(unique)
 
 
 
+# from collections import Counter
+
+# list2 = [1, 2, 3, 4, 5, 4, 5, 1, 7]
+
+# # Step 1: Count occurrences of each element
+# counts = Counter(list2)
+
+# # Step 2: Collect elements that appear only once
+# unique_elements = {num for num, count in counts.items() if count == 1}
+
+# print(unique_elements)  # Output: {2, 3, 7}
+
+# capitals = {"USA": "Washingtone D.C", "India":"New Delhi", "China":"Beijing"}
+
+#print(dir(capitals))
+# print(capitals)
+
+
+# keys=capitals.keys()
+# for key in keys:
+#     print(key)
+
+# values = capitals.values()
+
+# for value in values:
+#     print("\n",value)
+
+
+# for key, item in capitals.items():
+#     print(f"{key} : {item}")
+            
+# capitals.popitem()
+
+# print((capitals))
+
+
+list1=[0,1,2,3,5,6,8,9,10]
+j=list1[0]
+for i in range(len(list1)):
+    while list1[i] != j:
+        print(j)
+        j+=1
+    j+=1
+
+
+numbers=input(int("Enter two integers"))
+if (numbers>= 0):
+    a, b= numbers.line.split()
+    print(a+b)
+else:
+    print("Please enter a valid intiger")

@@ -1,7 +1,7 @@
 name = input("Please enter your name to start: ")
 print("Welcome", name, "to this adventure!")
 
-game_over = False  # Flag to indicate if the game is over (either win or lose)
+game_over = False  # Flag to indicate if the game is over (either win or lose.)
 
 while not game_over:
     answer = input("If you want to Quit, please enter Q\nYou are on a dirt road.\nIt has come to an end, you can go left or right. Which way would you like to go?\nLeft or Right? ").lower()
