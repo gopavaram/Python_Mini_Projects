@@ -7,3 +7,13 @@ on e.student_id = s.student_id
 and b.subject_name = e.subject_name
 group by s.student_id, s.student_name, b.subject_name
 order by s.student_id, b.subject_name
+
+
+
+# Write your MySQL query statement below
+select e1.name
+from Employee e1
+join Employee e2
+on e1.id=e2.managerId
+group by e2.managerId
+having count(e2.managerId)>=5
