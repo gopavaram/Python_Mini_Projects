@@ -62,3 +62,9 @@ where sent_date between '2022-08-01' and '2022-08-31'
 GROUP by sender_id
 order by message_count DESC
 LIMIT 2;
+
+# Write your MySQL query statement below
+SELECT  EXTRACT(MONTH from submit_date) as mth, product_id AS product, round(avg(stars),2) as avg_stars
+FROM reviews
+group by product_id, mth
+order by mth, product_id;
