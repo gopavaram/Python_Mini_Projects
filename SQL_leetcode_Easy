@@ -53,3 +53,12 @@ FROM posts
 WHERE post_date BETWEEN '2021-01-01' AND '2021-12-31'
 group by user_id
 HAVING COUNT(user_id) > 2;
+
+
+# Write your MySQL query statement below
+SELECT sender_id, count(sender_id) as message_count
+FROM messages
+where sent_date between '2022-08-01' and '2022-08-31'
+GROUP by sender_id
+order by message_count DESC
+LIMIT 2;
