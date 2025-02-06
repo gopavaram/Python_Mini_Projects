@@ -33,3 +33,11 @@ select candidate_id from candidates
 WHERE skill in ('Python', 'Tableau', 'PostgreSQL')
 GROUP by candidate_id
 HAVING count(skill) =3 ;
+
+# Write your MySQL query statement below
+SELECT p1.page_id
+FROM pages p1
+left JOIN page_likes p2
+on p1.page_id = p2.page_id
+Where p2.page_id is NULL
+order by p1.page_id;
