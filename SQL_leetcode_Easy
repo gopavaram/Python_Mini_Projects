@@ -47,3 +47,9 @@ select sum(case WHEN device_type = 'laptop' Then 1 else 0 END) as laptop_views,
 sum(case when device_type IN('phone', 'tablet') then 1 else 0 END) as mobile_views
 from viewership;
 
+# Write your MySQL query statement below
+SELECT user_id, MAX(post_date::DATE) - MIN(post_date::DATE) AS days_between
+FROM posts
+WHERE post_date BETWEEN '2021-01-01' AND '2021-12-31'
+group by user_id
+HAVING COUNT(user_id) > 2;
