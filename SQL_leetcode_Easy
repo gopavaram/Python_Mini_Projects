@@ -27,3 +27,9 @@ left Join Confirmations c
 on s.user_id = c.user_id
 GROUP BY s.user_id;
 
+
+# Write your MySQL query statement below
+select candidate_id from candidates
+WHERE skill in ('Python', 'Tableau', 'PostgreSQL')
+GROUP by candidate_id
+HAVING count(skill) =3 ;
