@@ -122,3 +122,10 @@ from
 (select delivery_id, customer_id, min(order_date) as o, min(customer_pref_delivery_date) as c
 from Delivery
 group by customer_id) as new_table
+
+# Write your MySQL query statement below
+select round(sum(A)/count(distinct player_id),2) as fraction
+from
+(select  *, DATEDIFF(event_date, min(event_date) OVER (PARTITION BY player_id ORDER BY event_date)) = 1 as A
+from Activity) as New_table
+
