@@ -1,3 +1,9 @@
+
+Window functions:
+Rank ()
+Row_number () or 
+DENSE_RANK() - assigns a ranking to rows without skipping ranks
+
 # Write your MySQL query statement below
 select s.student_id, s.student_name, b.subject_name, count(e.subject_name) as attended_exams
 from Students s
@@ -129,3 +135,11 @@ from
 (select  *, DATEDIFF(event_date, min(event_date) OVER (PARTITION BY player_id ORDER BY event_date)) = 1 as A
 from Activity) as New_table
 
+# Write your MySQL query statement below
+SELECT product_id, year AS first_year, quantity, price
+FROM (
+    SELECT *, 
+           dense_rank () OVER (PARTITION BY product_id ORDER BY year) AS rn
+    FROM Sales
+) AS new_table
+WHERE rn = 1;
