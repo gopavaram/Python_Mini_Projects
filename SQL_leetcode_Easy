@@ -1,8 +1,8 @@
-
 Window functions:
-Rank ()
-Row_number () or 
-DENSE_RANK() - assigns a ranking to rows without skipping ranks
+Row_number () - 1,2,3,4,5
+Rank ()  - 1,2,3,3,5
+DENSE_RANK() - assigns a ranking to rows without skipping ranks 1,2,3,3,4,5
+lag( 2,0)
 
 # Write your MySQL query statement below
 select s.student_id, s.student_name, b.subject_name, count(e.subject_name) as attended_exams
