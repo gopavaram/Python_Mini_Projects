@@ -155,3 +155,11 @@ select employee_id, department_id
 from Employee
 where primary_flag = 'Y'
 group by employee_id
+
+
+UPDATE Salary
+SET sex = CASE 
+            WHEN sex = 'm' THEN 'f' 
+            WHEN sex = 'f' THEN 'm' 
+            ELSE sex -- Keeps values unchanged if not 'm' or 'f'
+          END;
