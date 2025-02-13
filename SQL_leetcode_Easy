@@ -1,9 +1,6 @@
-CTE- Common table expression   WITH AS
-Window functions:
-Row_number () - 1,2,3,4,5
-Rank ()  - 1,2,3,3,5
-DENSE_RANK() - assigns a ranking to rows without skipping ranks 1,2,3,3,4,5
-lag( 2,0)
+DDL (Data Definition Language) - CREATE, ALTER, DROP, TRUNCATE, RENAME
+DML (Data Manipulation Language) - INSERT, UPDATE, DELETE, SELECT
+DCL (Data Control Language) - GRANT, REVOKE
 
 
 CREATE TABLE amazon_orders(
@@ -11,9 +8,18 @@ order_id intiger,
 order_date date
 );
 
-alter table amazon_orders alter column "order_date" datetime
+alter table amazon_orders alter column order_date datetime; --DDL
+alter table amazon_orders add username varchar(20);
 
-insert into amazon_orders values (5, '2202-10-01 12:05:12')
+insert into amazon_orders values (5, '2202-10-01 12:05:12');
+
+CTE- Common table expression   WITH AS
+Window functions:
+Row_number () - 1,2,3,4,5
+Rank ()  - 1,2,3,3,5
+DENSE_RANK() - assigns a ranking to rows without skipping ranks 1,2,3,3,4,5
+lag( 2,0)
+
 
 # Write your MySQL query statement below
 select s.student_id, s.student_name, b.subject_name, count(e.subject_name) as attended_exams
