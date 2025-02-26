@@ -1,1 +1,5 @@
+Power Query (PQ) -> Power Pivote (PP) (DAX) -> Power BI (Viz)
+
 Data source -> Power Query (Performe transformation)  -> DAX (Calculated Columns, Measures) -> Dashboarding
+
+
